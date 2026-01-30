@@ -1,4 +1,5 @@
 from collections.abc import Callable
+from pathlib import Path
 
 from matplotlib import animation
 from matplotlib import pyplot as plt
@@ -46,3 +47,6 @@ class AnimatedPlot:
 
     def show(self):
         plt.show()
+
+    def save_gif(self, filename: Path | str):
+        self.anim.save(filename, writer="pillow", fps=int(1000 / self.interval))
