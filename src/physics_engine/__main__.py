@@ -19,6 +19,7 @@ def update(
 
     for particle, _ in registry.get_registry():
         for axis in range(len(particle.position)):
+            # TODO: Make box constraint by walls with infinite mass
             if particle.position[axis] < 0:
                 particle.position[axis] = 0
                 particle.velocity[axis] *= -1
