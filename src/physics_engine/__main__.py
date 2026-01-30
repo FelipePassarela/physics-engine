@@ -1,3 +1,4 @@
+import argparse
 import random
 from functools import partial
 
@@ -31,6 +32,16 @@ def update(
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description="Simulate particles under forces.")
+    parser.add_argument(
+        "--output",
+        "-o",
+        type=str,
+        default=None,
+        help="Output GIF filename",
+    )
+    args = parser.parse_args()
+
     SIZE = 60
     DELTA_TIME = 0.05
     N_PARTICLES = 100
@@ -53,7 +64,11 @@ def main() -> None:
         scale=SIZE,
         interval=int(DELTA_TIME * 1000),
     )
-    anim.show()
+
+    if args.output is None:
+        anim.show()
+    else:
+        anim.save_gif(args.output or "particle_simulation.gif")
 
 
 if __name__ == "__main__":
