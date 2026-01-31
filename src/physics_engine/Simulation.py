@@ -39,7 +39,7 @@ class Simulation:
             forces = [
                 GravityForce(gravity=glm.vec3(0, -20, 0)),
                 DragForce(k1=0.1, k2=0.01),
-                SpringForce(other=other, k=10, rest_length=3),
+                SpringForce(other=other, k=100, rest_length=3),
             ]
             self.registry.add(particle=particle, forces=forces)
 
