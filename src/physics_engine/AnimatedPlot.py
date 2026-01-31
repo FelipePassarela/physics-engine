@@ -39,9 +39,9 @@ class AnimatedPlot:
     def _update(self, frame: int) -> tuple:
         data: list[dict[str, glm.vec3]] = self.func()
         self.scat._offsets3d = (
-            [d["position"].z for d in data],
-            [d["position"].x for d in data],
-            [d["position"].y for d in data],
+            [d["point"].z for d in data],
+            [d["point"].x for d in data],
+            [d["point"].y for d in data],
         )
         return (self.scat,)
 

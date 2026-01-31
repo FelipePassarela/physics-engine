@@ -27,7 +27,7 @@ def update(
                 particle.position[axis] = size - 1
                 particle.velocity[axis] *= -1
 
-        plot_data.append({"position": particle.position})
+        plot_data.append({"point": particle.position})
 
     return plot_data
 
