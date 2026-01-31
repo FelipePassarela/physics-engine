@@ -8,7 +8,7 @@ from physics_engine.AnimatedPlot import AnimatedPlot
 from physics_engine.force.DragForce import DragForce
 from physics_engine.force.GravityForce import GravityForce
 from physics_engine.Particle import Particle
-from physics_engine.ParticleForceRegistry import ParticleForceRegistry
+from physics_engine.force.ParticleForceRegistry import ParticleForceRegistry
 
 
 def update(
