@@ -29,9 +29,9 @@ def main() -> None:
     simulation = Simulation()
     anim = AnimatedPlot(
         partial(update, simulation=simulation),
-        nframes=60,
+        nframes=1000,
         scale=simulation.SCALE,
-        interval=50,
+        interval=20,
     )
 
     if args.output is None:
